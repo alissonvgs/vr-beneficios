@@ -1,0 +1,70 @@
+{
+	"id": "46a2ea46-d997-416a-ad1f-6fa25709b218",
+	"name": "VR - beneficios Concorrencias",
+	"timestamp": "2025-07-04T21:05:05.691Z",
+	"collection_id": "11530456-75aefbbb-a48c-4945-9ffb-ca56d42a98a7",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-07-04T21:05:04.890Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "fdb0571d-f9e1-4708-9803-f9d49552ea1b",
+			"name": "Concorrencia - Salvar cartao",
+			"url": "localhost:8080/cartoes",
+			"time": 18,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity (WebDAV) (RFC 4918)"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				19,
+				18
+			],
+			"allTests": [
+				{},
+				{}
+			]
+		},
+		{
+			"id": "6f8f7a08-d958-49ac-8351-b4fa8463fbf7",
+			"name": "Concorrencia - Transacao Concorrente",
+			"url": "localhost:8080/transacoes",
+			"time": 19,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity (WebDAV) (RFC 4918)"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21,
+				19
+			],
+			"allTests": [
+				{},
+				{}
+			]
+		}
+	],
+	"count": 2,
+	"totalTime": 77,
+	"collection": {
+		"requests": [
+			{
+				"id": "fdb0571d-f9e1-4708-9803-f9d49552ea1b",
+				"method": "POST"
+			},
+			{
+				"id": "6f8f7a08-d958-49ac-8351-b4fa8463fbf7",
+				"method": "POST"
+			}
+		]
+	}
+}

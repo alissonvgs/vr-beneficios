@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "9ff2e184-726e-4701-bf3f-f6533f546fd5",
+		"name": "VR - beneficios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11530456"
+	},
+	"item": [
+		{
+			"name": "Salvar cartao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCartao\": \"6549873025634501\",\r\n  \"senha\": \"1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/cartoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter saldo - Not found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cartoes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter saldo - Sucesso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/cartoes/6549873025634501",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cartoes",
+						"6549873025634501"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transacoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCartao\": \"6549873025634501\",\r\n  \"senhaCartao\": \"1234\",\r\n  \"valor\": 100.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transacoes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacoes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

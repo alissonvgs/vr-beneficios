@@ -1,0 +1,110 @@
+{
+	"id": "9aa9925f-056e-4071-ad5b-640fed41e2d2",
+	"name": "VR - beneficios",
+	"timestamp": "2025-07-04T23:07:43.112Z",
+	"collection_id": "11530456-9ff2e184-726e-4701-bf3f-f6533f546fd5",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": false,
+	"status": "finished",
+	"startedAt": "2025-07-04T23:07:42.310Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "dcb924bd-2dc9-49f1-a220-e0c8022f8a76",
+			"name": "Salvar cartao",
+			"url": "localhost:8080/cartoes",
+			"time": 41,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				41
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0e718b90-db35-4fb8-b701-6185eab23846",
+			"name": "Obter saldo - Not found",
+			"url": "localhost:8080/cartoes/1",
+			"time": 18,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity (WebDAV) (RFC 4918)"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "99a21b5e-7d62-4df4-9268-6d6be66681a3",
+			"name": "Obter saldo - Sucesso",
+			"url": "localhost:8080/cartoes/6549873025634501",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				19
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "32245a28-c891-41e7-8bfd-4c80dd198b6a",
+			"name": "Transacoes",
+			"url": "localhost:8080/transacoes",
+			"time": 23,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				23
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 101,
+	"collection": {
+		"requests": [
+			{
+				"id": "dcb924bd-2dc9-49f1-a220-e0c8022f8a76",
+				"method": "POST"
+			},
+			{
+				"id": "0e718b90-db35-4fb8-b701-6185eab23846",
+				"method": "GET"
+			},
+			{
+				"id": "99a21b5e-7d62-4df4-9268-6d6be66681a3",
+				"method": "GET"
+			},
+			{
+				"id": "32245a28-c891-41e7-8bfd-4c80dd198b6a",
+				"method": "POST"
+			}
+		]
+	}
+}
