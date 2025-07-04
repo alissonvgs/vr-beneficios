@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Service
 public class AutorizarTransacaoService {
@@ -21,18 +22,21 @@ public class AutorizarTransacaoService {
 
     @Transactional
     public void autorizar(String numeroCartao, String senhaCartao, BigDecimal valor) {
-        Cartao cartao = repository.findByNumeroCartao(numeroCartao)
-                .orElseThrow(CartaoNaoEncontradoException::new);
+        Cartao cartao = repository.findByNumeroCartaoComLock(numeroCartao).orElseThrow(CartaoNaoEncontradoException::new);
 
-        if (!cartao.getSenha().equals(senhaCartao)) {
-            throw new SenhaInvalidaException();
-        }
-
-        if (cartao.getSaldo().compareTo(valor) < 0) {
-            throw new SaldoInsuficienteException();
-        }
+        validarSaldo(cartao, valor);
+        validarSenha(cartao, senhaCartao);
 
         cartao.debitar(valor);
         repository.save(cartao);
     }
+
+    private void validarSenha(Cartao cartao, String senhaInformada) {
+        Optional.ofNullable(cartao.getSenha()).filter(senha -> senha.equals(senhaInformada)).orElseThrow(SenhaInvalidaException::new);
+    }
+
+    private void validarSaldo(Cartao cartao, BigDecimal valor) {
+        Optional.of(cartao.getSaldo().compareTo(valor)).filter(comparacao -> comparacao >= 0).orElseThrow(SaldoInsuficienteException::new);
+    }
+
 }

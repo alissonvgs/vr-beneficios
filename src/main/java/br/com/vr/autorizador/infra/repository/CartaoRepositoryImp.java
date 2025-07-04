@@ -21,6 +21,11 @@ public class CartaoRepositoryImp implements CartaoRepository {
     }
 
     @Override
+    public Optional<Cartao> findByNumeroCartaoComLock(String numeroCartao) {
+        return jpaRepository.findByNumeroCartaoComLock(numeroCartao);
+    }
+
+    @Override
     public Cartao save(Cartao cartao) {
         return jpaRepository.save(cartao);
     }

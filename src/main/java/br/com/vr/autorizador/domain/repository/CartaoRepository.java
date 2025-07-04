@@ -5,5 +5,8 @@ import java.util.Optional;
 
 public interface CartaoRepository {
     Optional<Cartao> findByNumeroCartao(String numeroCartao);
+    Optional<Cartao> findByNumeroCartaoComLock(String numeroCartao);
+
     Cartao save(Cartao cartao);
+
 }
