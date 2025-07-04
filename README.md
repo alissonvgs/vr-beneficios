@@ -51,7 +51,7 @@ VR - beneficios
   - 📄 [Execução basica de endpoints](./././postman/collection/VR%20-%20beneficios.postman_collection.json)
 
 VR - beneficios Concorrencias
-  - 📄 [Execução de concorrência](postman/collection/VR%20-%20beneficios Concorrencias.postman_collection.json)
+  - 📄 [Execução de concorrência](postman/collection/VR%20-%20beneficios%20Concorrencias.postman_collection.json)
 
 ## Swagger
 **path:** /swagger
