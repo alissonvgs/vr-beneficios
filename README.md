@@ -27,7 +27,7 @@ Este projeto implementa um sistema de autorização simples de transações com 
 - JUnit 5, Mockito
 - JaCoCo (88% cobertura)
 - Swagger (Para documentação de desenvolvedor)
-- DBeaver (GUI opcional para banco)
+- DBeaver (Utilizado para visualizar melhor o bd)
 - Postman (Utilizado para automatizar os testes de API)
 - Docker Compose
 
@@ -38,10 +38,10 @@ Este projeto implementa um sistema de autorização simples de transações com 
 ```bash
 src/main/java/br/com/vr/autorizador
 ├── adapter         # Interfaces REST (Controllers, DTOs, ExceptionHandler)
-├── application     # Casos de uso / serviços de aplicação
+├── application     # Casos de uso e serviços de aplicação
 ├── domain          # Entidades, exceções, interfaces (modelo de negócio)
 ├── infra           # Repositórios (JPA) e entidades de persistência
-└── main            # Configurações (Application, config DB, startup)
+└── main            # Configurações (Application)
 ````
 
 ## Testes de API via Postman e consulta Swagger
